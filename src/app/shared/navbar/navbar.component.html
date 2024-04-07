@@ -1,0 +1,22 @@
+<div class="top-nav">
+<p-tabMenu [model]="items" styleClass="custom-tab-menu" [style]="{'text-align': 'right'}"></p-tabMenu>
+</div>
+
+<p-dialog header="Add your post" [(visible)]="visible" [style]="{ width: '35vw', height: '500px' }">
+    <form [formGroup]="postform" (ngSubmit)="onsubmit()">
+        <div class="flex flex-column gap-2">
+            <label for="username">Post Title <br></label> 
+            <input type="text" pInputText style="width: 385px;" formControlName="posttitle"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label for="username">Post Body <br></label> 
+            <textarea rows="10" cols="40" pInputTextarea formControlName="postbody"></textarea>
+        </div> 
+        <div class=" buttom-align">
+            <p-button type= "Submit" label="Submit"></p-button>   
+        </div>               
+    </form>
+</p-dialog>
+
+
+

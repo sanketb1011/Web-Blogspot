@@ -1,0 +1,63 @@
+.content{
+  padding-top: 45px;
+}
+
+.post-container {
+  display:flexbox ;
+  flex-wrap:nowrap;
+  justify-content: space-between; /* Add space between cards */
+}
+
+
+.post-card {
+  width: calc(25% - 20px); /* Set width for each card (minus margin) */
+  margin: 10px; /* Add margin around each card */
+  display: inline-block; /* Display cards in a row */
+  vertical-align: top; /* Align cards at the top */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */ 
+  height:  400px;
+  }
+.post-icons{
+  display: flex; /* Make the icons container a flex container */
+  justify-content:flex-start; /* Add space between the icons */
+  
+}
+.post-icons i{
+  margin-right: 10px;
+  font-size:  20px;  
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+.post-body{
+  height: 250px; /* Set a fixed height for the content area */
+  overflow-y: auto;
+  scrollbar-width: none; /* Hide the scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide the scrollbar for IE and Edge */
+}
+
+.post-body::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+  
+}
+
+.p-card {
+  font-size: 16px !important; /* Change the font size to 16 pixels */
+}
+
+.post-user-info span
+{
+  display:inline-block;
+  margin-bottom: 10px;
+}
+
+
+.float-right{
+  float: right;
+}
+
+.icon-text{
+  margin-left: 5px;
+  vertical-align: middle;
+}

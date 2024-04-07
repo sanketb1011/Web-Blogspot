@@ -1,0 +1,35 @@
+.top-nav{
+    position: fixed; /* Set navbar position to fixed */
+  top: 0; /* Position navbar at the top of the viewport */
+  width: 100%; /* Set navbar width to fill the entire viewport */
+  z-index: 1000; /* Set a high z-index to ensure the navbar appears above other content */
+  /* Add any other styling as needed */
+}
+.topnav{
+    background-color:  #fcd703; 
+    margin: 0%;
+    padding: 5px 0px;
+    height: fit-content;
+    position: fixed;
+}
+
+.topnav ul{
+    list-style-type: none;
+
+}
+
+.topnav ul li{
+    display: inline-block; 
+    padding-right: 10px;
+}
+
+::ng-deep .custom-tab-menu .ui-tabmenu-nav {
+    justify-content: flex-end;
+    background-color: red;
+}
+
+buttom-align{
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 1rem; /* Add space between textarea and button */
+}

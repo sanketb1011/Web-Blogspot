@@ -1,0 +1,28 @@
+<div class="content">
+  <div class="posts-container">
+    <div *ngFor="let post of postService.posts" class="post-card">
+      <p-card [header]="" [subheader]="post.postTitle" >
+        <div class="post-user-info ">
+           <span >{{ post.user.userName }}</span>
+           <span class="float-right">{{ post.postTitle }}</span>
+        </div>
+
+        <ng-template pTemplate="content">
+          <div class="post-body">
+            <p>{{ post.postBody }}</p>
+          </div>                         
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          <div class="post-icons">           
+            <i class="pi pi-heart" (click)="popup();"> <span class="icon-text">{{post.commentCount}}</span> </i>
+            <i class="pi pi-comment" (click)="popup();"><span class="icon-text">{{post.likeCount}}</span> </i>           
+            
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  
+
+</div>
