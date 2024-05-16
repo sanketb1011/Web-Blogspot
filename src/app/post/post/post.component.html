@@ -15,14 +15,25 @@
 
         <ng-template pTemplate="footer">
           <div class="post-icons">           
-            <i class="pi pi-heart" (click)="popup();"> <span class="icon-text">{{post.commentCount}}</span> </i>
-            <i class="pi pi-comment" (click)="popup();"><span class="icon-text">{{post.likeCount}}</span> </i>           
+            <i class="pi pi-heart" (click)="popup();"> <span class="icon-text">{{post.likeCount}}</span> </i>
+            <i class="pi pi-comment" (click)="loadCommentPopup(post.postId);"><span class="icon-text">{{post.commentCount}}</span> </i>           
             
           </div>
         </ng-template>
       </p-card>
     </div>
   </div>
-  
-
 </div>
+
+<p-dialog header="Comments" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem', height: '30rem' }">
+  <div *ngFor="let commentmodel of postService.comments" class="flex align-items-center gap-3 mb-3">
+    <span>{{ commentmodel.body }}</span>
+  </div>
+    <div class="flex align-items-center gap-3 mb-5">
+       
+        <input pInputText  [(ngModel)]="comment" class="flex-auto" autocomplete="off" />
+        <p-button  label="Save" (click)="Addcomment()" />
+    </div>
+  
+    
+</p-dialog>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { postmodel } from '../models/post.model';
 import { PostHttpService } from './post-http.service';
 import { BehaviorSubject } from 'rxjs';
+import { commentmodel } from '../models/comment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class PostService {
 
   public posts : postmodel[];
+  public comments:commentmodel[];
   private addpostdialog= new BehaviorSubject<boolean>(false);
   openpopup$=this.addpostdialog.asObservable();
 
@@ -48,7 +50,7 @@ export class PostService {
       (response)=>{
         console.log(response);
         isadded= true;
-        
+        this.loadallposts();
       },
       (err)=>{
         isadded= false;
@@ -56,4 +58,25 @@ export class PostService {
       })
     return true;
   }
+  loadComment(postId:string){
+    this.httppostservice.getcomments(postId).subscribe(
+      (response)=>{
+        this.comments=response.map(item=> item as commentmodel)
+        return this.comments;
+      }
+    )
+  }
+  AddComment(comment:string,postId: string)
+  {
+    let commentModel : commentmodel=new commentmodel();
+    commentModel.body=comment;
+    commentModel.postId=postId;
+    commentModel.userId='3fa85f64-5717-4562-b3fc-2c963f66afa6';
+     this.httppostservice.addcomment(commentModel).subscribe(
+      (response)=>{
+        this.comments.push(response);
+      }
+     )
+  }
+
 }

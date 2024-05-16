@@ -6,7 +6,7 @@ import { PostModule } from './post/post.module';
 import { SharedModule } from './shared/shared.module';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     PostModule,
     SharedModule,
     TabMenuModule,

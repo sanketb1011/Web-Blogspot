@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddpostComponent } from './addpost/addpost.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     PostRoutingModule,
     CardModule,
     HttpClientModule,
